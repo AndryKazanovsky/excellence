@@ -1,0 +1,179 @@
+$grey: #58595b;
+header {
+	&.landing {
+		background: url('../images/courthouse-img.png') no-repeat;
+		min-height: 900px;
+	    background-size: cover;
+	    background-position:  left bottom;
+		.header-img {
+			width: 100%;
+			background-size: cover;
+		}
+	}
+	.container {
+
+
+	}
+	.main-menu {
+        justify-content: space-between;
+	    align-items: center;
+    	padding-top: 50px;
+		ul.row {
+			padding: 0;
+			li {
+				font-family: HelveticaNeueCyr-Medium;
+				list-style: none;
+				margin-left: 20px;
+
+				a {
+					text-decoration: none;
+					color: $grey;
+			}
+			a:hover {
+				color: #009999;
+				}
+			}
+
+		}
+	}
+
+}
+.info {
+	font-family: HelveticaNeueCyr-Light;
+	font-size: 30px;
+	margin-top: 235px;
+	margin-left: 300px;
+	max-width: 530px;
+	color: $grey;
+		h1 {
+		font-family: HelveticaNeueCyr-Bold;
+		font-size: 36px;
+		color: $grey;
+	}
+	p {
+		font-family: HelveticaNeueCyr-Thin;
+		font-size: 30px;
+	}
+
+}
+@media screen and (max-width: 1000px) {
+	
+	header {
+		&.landing {
+			min-height: 450px;
+			.info {
+				margin-top: 100px;
+				margin-left: 50px;
+				max-width: 530px;
+				h1 {
+					display: none;
+				}
+				p {
+					font-size: 24px;
+				}
+			}
+		}
+	}
+	.burger {
+		display: block;
+		z-index: 200;
+	}
+	ul.flex.row {
+		display: none;
+	}
+}
+@media screen and (max-width: 800px) {
+	.info {
+
+		p {
+			font-size: 21px;
+		}
+	}
+}
+
+
+
+@media screen and (max-width: 500px) {
+	
+	header {
+		&.landing {
+			.info {
+				p {
+					font-size: 20px;
+					padding-right: 10px;
+				}
+			}
+		}
+	}
+	.burger {
+		display: block;
+		z-index: 200;
+	}
+	ul.flex.row {
+		display: none;
+	}
+}
+.language-select {
+  display: inline-flex;
+  flex-direction: column;
+  color: black;
+  margin: 30px;
+  text-transform: uppercase;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  
+  li {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 2;
+    padding: 10px;
+    min-height: 40px;
+    a {
+    	pointer-events: none;
+    }
+ }
+  li:hover {
+    cursor: pointer;
+  }
+}
+.language-select.open {
+  height: auto;
+}
+.language-select li.active {
+  order: 1;
+  pointer-events: none;
+}
+
+	ul {
+	margin-right: 40px;
+	.language-select {
+		position: absolute;
+		top: 24px;
+		right: 5px;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.language-select {
+		display: none;
+	}
+}
+
+
+.language-select-burger {
+	display: flex;
+	flex-direction: row;
+	padding-left: 0px;
+	li {
+		padding-left: 5px;
+		padding-right: 25px;
+		font-size: 20px;
+		font-family: HelveticaNeueCyr-Thin;
+		a {
+    		pointer-events: none;
+		}
+	}
+}

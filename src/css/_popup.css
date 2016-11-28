@@ -1,0 +1,168 @@
+.modal {
+  max-width: 80%;
+  margin: auto;
+  will-change: visibility, opacity;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 20px;
+  bottom: 50px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-transition-delay: $modal-delay;
+  transition-delay: $modal-delay;
+  box-shadow: 0 12px 15px 0 rgba(0,0,0,0.25);
+  background: #f9f9f9;
+
+}
+.modal--active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal--align-top {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.modal__bg {
+  background: transparent;
+  background: #f9f9f9;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+
+}
+.modal__dialog {
+  max-width: 1000px;
+  padding: 1.2rem;
+}
+.modal__content {
+  will-change: transform, opacity;
+  position: absolute;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  padding: 40PX;
+  background: #f9f9f9;
+  background-clip: padding-box;
+  /*box-shadow: 0 12px 15px 0 rgba(0,0,0,0.25);*/
+  opacity: 0;
+  -webkit-transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  h3 {
+    font-family: HelveticaNeueCyr-Thin;
+    font-size: 24px;
+  }
+  p,.info-news {
+    font-family: HelveticaNeueCyr-Light;
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+  img {
+    display: block;
+    margin: auto;
+    max-height: 450px;
+    max-width: 70%;
+  }
+}
+.modal__content--active {
+  opacity: 1;
+}
+
+.modal__close {
+  z-index: 1100;
+  cursor: pointer;
+}
+.modal__trigger {
+  position: relative;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /*-webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);*/
+  /*transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);*/
+  text-decoration: none;
+}
+.modal__trigger--active {
+  /*display: none;*/
+}
+
+#modal__temp {
+  will-change: transform, opacity;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: none;
+          transform: none;
+  opacity: 1;
+  -webkit-transition: opacity 0.1s ease-out, -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.1s ease-out, -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.demo-close {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  margin: 1.2rem;
+  padding: 0.6rem;
+  -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.demo-close svg {
+  width: 48px;
+  fill: #009999;
+  pointer-events: none;
+  vertical-align: top;
+}
+
+
+
+.modal::-webkit-scrollbar { 
+    display: none; 
+}
+
+
+@media screen and (max-width: 800px) {
+    .modal__content {
+        padding: 10px
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .demo-close {
+        top: -5;
+        right: -5;
+    }
+    .demo-close svg {
+        width: 25px;
+    }
+}
+
+
+
+body.active + body:before {
+  background: red;
+}
